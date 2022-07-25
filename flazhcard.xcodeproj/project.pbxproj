@@ -13,6 +13,14 @@
 		C248BE9B2888F2AB00FAD94C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C248BE9A2888F2AB00FAD94C /* Preview Assets.xcassets */; };
 		C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE9C2888F2AB00FAD94C /* Persistence.swift */; };
 		C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C248BE9E2888F2AB00FAD94C /* flazhcard.xcdatamodeld */; };
+		C248BEAB2889A56000FAD94C /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEAA2889A56000FAD94C /* OnboardingContentView.swift */; };
+		C248BEAD288A3D2D00FAD94C /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEAC288A3D2D00FAD94C /* OnboardingContainerView.swift */; };
+		C248BEAF288A40AC00FAD94C /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEAE288A40AC00FAD94C /* Feature.swift */; };
+		C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEB2288CF58900FAD94C /* FlazhCardView.swift */; };
+		C248BEC3288E52CC00FAD94C /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEBF288E52CC00FAD94C /* Poppins-Medium.ttf */; };
+		C248BEC4288E52CC00FAD94C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */; };
+		C248BEC5288E52CC00FAD94C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */; };
+		C248BEC6288E52CC00FAD94C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,15 @@
 		C248BE9A2888F2AB00FAD94C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C248BE9C2888F2AB00FAD94C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C248BE9F2888F2AB00FAD94C /* flazhcard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = flazhcard.xcdatamodel; sourceTree = "<group>"; };
+		C248BEAA2889A56000FAD94C /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
+		C248BEAC288A3D2D00FAD94C /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		C248BEAE288A40AC00FAD94C /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		C248BEB2288CF58900FAD94C /* FlazhCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardView.swift; sourceTree = "<group>"; };
+		C248BEBE288E512D00FAD94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C248BEBF288E52CC00FAD94C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +72,15 @@
 		C248BE922888F2A900FAD94C /* flazhcard */ = {
 			isa = PBXGroup;
 			children = (
+				C248BEBE288E512D00FAD94C /* Info.plist */,
 				C248BE932888F2A900FAD94C /* flazhcardApp.swift */,
 				C248BE952888F2A900FAD94C /* ContentView.swift */,
+				C248BEB4288E3B5300FAD94C /* Onboarding */,
+				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
 				C248BE972888F2AB00FAD94C /* Assets.xcassets */,
 				C248BE9C2888F2AB00FAD94C /* Persistence.swift */,
 				C248BE9E2888F2AB00FAD94C /* flazhcard.xcdatamodeld */,
+				C248BEC7288E52D400FAD94C /* Fonts */,
 				C248BE992888F2AB00FAD94C /* Preview Content */,
 			);
 			path = flazhcard;
@@ -71,6 +92,27 @@
 				C248BE9A2888F2AB00FAD94C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C248BEB4288E3B5300FAD94C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C248BEAA2889A56000FAD94C /* OnboardingContentView.swift */,
+				C248BEAC288A3D2D00FAD94C /* OnboardingContainerView.swift */,
+				C248BEAE288A40AC00FAD94C /* Feature.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C248BEC7288E52D400FAD94C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */,
+				C248BEBF288E52CC00FAD94C /* Poppins-Medium.ttf */,
+				C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */,
+				C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +173,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C248BEC3288E52CC00FAD94C /* Poppins-Medium.ttf in Resources */,
+				C248BEC6288E52CC00FAD94C /* Poppins-Bold.ttf in Resources */,
+				C248BEC4288E52CC00FAD94C /* Poppins-SemiBold.ttf in Resources */,
 				C248BE9B2888F2AB00FAD94C /* Preview Assets.xcassets in Resources */,
 				C248BE982888F2AB00FAD94C /* Assets.xcassets in Resources */,
+				C248BEC5288E52CC00FAD94C /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +192,11 @@
 				C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */,
 				C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */,
 				C248BE962888F2A900FAD94C /* ContentView.swift in Sources */,
+				C248BEAF288A40AC00FAD94C /* Feature.swift in Sources */,
+				C248BEAD288A3D2D00FAD94C /* OnboardingContainerView.swift in Sources */,
+				C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */,
 				C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */,
+				C248BEAB2889A56000FAD94C /* OnboardingContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +328,7 @@
 				DEVELOPMENT_TEAM = 8F64K5MPSU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = flazhcard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +358,7 @@
 				DEVELOPMENT_TEAM = 8F64K5MPSU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = flazhcard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

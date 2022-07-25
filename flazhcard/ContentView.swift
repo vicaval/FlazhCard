@@ -17,29 +17,78 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        
+        ZStack {
+            Image("HomeBackground")
+                .resizable()
+                .ignoresSafeArea()
+                .aspectRatio(contentMode: .fill)
+            
+            VStack(alignment: .leading, spacing: 0) {
+                HStack {
+                    Text("Your Notes")
+                        .font(.largeTitle.bold())
+                        .foregroundColor(Color.black)
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    Text("+")
+                        .font(.title.bold())
+                        .foregroundColor(Color.red)
+                    
+                }
+                .padding(.horizontal)
+                .padding(.top, 89)
+                
+                ScrollView {
+                    
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+                            .frame(height: 80.0)
+                        
+                        VStack(alignment: .leading)  {
+                            Text("Design")
+                                .font(.headline)
+                                .multilineTextAlignment(.leading)
+                                .padding(.bottom, -3.0)
+                            
+                            Text("5 FlazhCards")
+                        }
+                        .padding(.leading, 20.0)
                     }
+                        
                 }
-                .onDelete(perform: deleteItems)
+                .padding(.horizontal)
+                .padding(.top, 75)
+                
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
         }
+//        NavigationView {
+//            List {
+//                ForEach(items) { item in
+//                    NavigationLink {
+//                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+//                    } label: {
+//                        Text(item.timestamp!, formatter: itemFormatter)
+//                    }
+//                }
+//                .onDelete(perform: deleteItems)
+//            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    EditButton()
+//                }
+//                ToolbarItem {
+//                    Button(action: addItem) {
+//                        Label("Add Item", systemImage: "plus")
+//                    }
+//                }
+//            }
+//            Text("Select an item")
+//        }
     }
 
     private func addItem() {
