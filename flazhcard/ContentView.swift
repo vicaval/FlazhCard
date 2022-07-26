@@ -19,7 +19,9 @@ struct ContentView: View {
     
     @State private var hasContent = false
 
+
     var body: some View {
+        
         
         ZStack {
             Image("HomeBackground")
@@ -43,7 +45,8 @@ struct ContentView: View {
                             .font(.custom("Poppins-Medium", size: 40))
                             .foregroundColor(Color.red)
                     }
-
+//                    sheet(isPresented: $showView) {
+//                                    SecondView()
                     
                 }
                 .padding(.horizontal)

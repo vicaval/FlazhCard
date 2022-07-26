@@ -15,7 +15,7 @@ struct flazhcardApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            StartView()
+            FirstView()
         }
     }
 }
