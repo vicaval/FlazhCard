@@ -60,7 +60,7 @@ struct OnboardingContainerView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundColor(selection == 1 ? .red : .gray)
-                        Text(selection == 4 ? "Continue" : "Next")
+                        Text(selection == 1 ? "Let's Get Started" : "Next")
                             .bold()
                             .foregroundColor(.white)
                     }

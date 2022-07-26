@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct StartView: View {
+struct notesCategoryDetailsView: View {
     
     @State var showView = false
     
@@ -39,7 +39,7 @@ struct StartView: View {
                             .foregroundColor(Color.red)
                     }
                     .sheet(isPresented: $showView) {
-                                    SecondView()
+                                    addFlazhCardView()
                     }
                 }
                 .padding(.horizontal)
@@ -88,7 +88,7 @@ struct StartView: View {
     
     struct StartView_Previews: PreviewProvider {
         static var previews: some View {
-            StartView()
+            notesCategoryDetailsView()
         }
     }
 }

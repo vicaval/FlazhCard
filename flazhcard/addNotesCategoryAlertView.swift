@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct addalertView: View {
+struct addNotesCategoryAlertView: View {
+    
     
     let screenSize = UIScreen.main.bounds
     
@@ -28,7 +29,8 @@ struct addalertView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Button {
-                print("Save")
+                self.isShown = false
+                print(text)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 12)
@@ -39,6 +41,7 @@ struct addalertView: View {
                 }
             }
             .frame(height: 40)
+            .padding(.top, 20)
         
             
         }
@@ -55,6 +58,6 @@ struct addalertView: View {
 
 struct addalertView_Previews: PreviewProvider {
     static var previews: some View {
-        addalertView(isShown: .constant(true), text: .constant(""))
+        addNotesCategoryAlertView(isShown: .constant(true), text: .constant(""))
     }
 }

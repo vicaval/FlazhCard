@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct notesCategoryView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -20,7 +20,7 @@ struct ContentView: View {
     @State private var hasContent = false
     
     //alert
-    @State private var isPresesnted: Bool = false
+    @State private var isPresented: Bool = false
     @State private var text: String = ""
 
     var body: some View {
@@ -42,19 +42,16 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        self.isPresesnted = true
+                        self.isPresented = true
 //                        hasContent.toggle()
                     } label: {
                         Text("+")
                             .font(.custom("Poppins-Medium", size: 40))
                             .foregroundColor(Color.red)
                     }
-                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 89)
-                
-                
                 
                 ScrollView {
                     
@@ -88,9 +85,17 @@ struct ContentView: View {
                 .padding(.horizontal)
                 .padding(.top, 75)
             }
-            
-            addalertView(isShown: $isPresesnted, text: $text)
         }
+        .overlay(
+            ZStack{
+                Rectangle()
+                    .ignoresSafeArea()
+                    .opacity(isPresented ? 0.3 : 0)
+                    .foregroundColor(.black)
+                addNotesCategoryAlertView(isShown: $isPresented, text: $text)
+            }
+                .animation(.easeIn)
+        )
 //        NavigationView {
 //            List {
 //                ForEach(items) { item in
@@ -157,6 +162,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        notesCategoryView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SecondView: View {
+struct addFlazhCardView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -104,6 +104,6 @@ struct SecondView: View {
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        notesCategoryView()
     }
 }
