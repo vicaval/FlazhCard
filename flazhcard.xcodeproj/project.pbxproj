@@ -23,6 +23,7 @@
 		C248BEC6288E52CC00FAD94C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */; };
 		C248BEC9288F8F3A00FAD94C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEC8288F8F3A00FAD94C /* StartView.swift */; };
 		C248BECB288F9AC900FAD94C /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BECA288F9AC900FAD94C /* SecondView.swift */; };
+		C281BE2C289027DF00153D21 /* addalertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2B289027DF00153D21 /* addalertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		C248BEC8288F8F3A00FAD94C /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		C248BECA288F9AC900FAD94C /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		C281BE2B289027DF00153D21 /* addalertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addalertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				C248BE952888F2A900FAD94C /* ContentView.swift */,
 				C248BECA288F9AC900FAD94C /* SecondView.swift */,
 				C248BEC8288F8F3A00FAD94C /* StartView.swift */,
+				C281BE2B289027DF00153D21 /* addalertView.swift */,
 				C248BEB4288E3B5300FAD94C /* Onboarding */,
 				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
 				C248BE972888F2AB00FAD94C /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C248BEC9288F8F3A00FAD94C /* StartView.swift in Sources */,
+				C281BE2C289027DF00153D21 /* addalertView.swift in Sources */,
 				C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */,
 				C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */,
 				C248BE962888F2A900FAD94C /* ContentView.swift in Sources */,

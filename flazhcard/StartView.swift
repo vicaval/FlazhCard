@@ -10,6 +10,8 @@ import SwiftUI
 
 struct StartView: View {
     
+    @State var showView = false
+    
     var body: some View {
         
         ZStack(alignment: .bottom) {
@@ -30,11 +32,14 @@ struct StartView: View {
                     Spacer()
                     
                     Button {
-                        print("test")
+                        showView.toggle()
                     } label: {
                         Text("+")
                             .font(.custom("Poppins-Medium", size: 40))
                             .foregroundColor(Color.red)
+                    }
+                    .sheet(isPresented: $showView) {
+                                    SecondView()
                     }
                 }
                 .padding(.horizontal)
@@ -54,7 +59,7 @@ struct StartView: View {
                                 .multilineTextAlignment(.leading)
                             
                             
-                            Text("5 FlazhCards")
+                            Text("Lorem Ipsum hhuggjghh gughghg hg...")
                                 .font(.custom("Poppins-Regular", size: 16))
                         }
                         .padding(.leading, 20.0)

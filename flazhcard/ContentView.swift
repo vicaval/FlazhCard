@@ -19,7 +19,9 @@ struct ContentView: View {
     
     @State private var hasContent = false
     
-    @State var showView = false
+    //alert
+    @State private var isPresesnted: Bool = false
+    @State private var text: String = ""
 
     var body: some View {
         
@@ -40,20 +42,19 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        hasContent.toggle()
-                        showView.toggle()
+                        self.isPresesnted = true
+//                        hasContent.toggle()
                     } label: {
                         Text("+")
                             .font(.custom("Poppins-Medium", size: 40))
                             .foregroundColor(Color.red)
                     }
-                    .sheet(isPresented: $showView) {
-                                    SecondView()
-                    }
                     
                 }
                 .padding(.horizontal)
                 .padding(.top, 89)
+                
+                
                 
                 ScrollView {
                     
@@ -87,6 +88,8 @@ struct ContentView: View {
                 .padding(.horizontal)
                 .padding(.top, 75)
             }
+            
+            addalertView(isShown: $isPresesnted, text: $text)
         }
 //        NavigationView {
 //            List {
