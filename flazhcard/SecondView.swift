@@ -27,23 +27,6 @@ struct SecondView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                    
-                } label: {
-                    Text("Cancel")
-                        .foregroundColor(.black)
-                        .font(.custom("Poppins-Regular", size: 15))
-                }
-                
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Spacer()
-            }
-            
-            
-            VStack {
                 Text("Title")
                     .font(.custom("Poppins-SemiBold", size: 18))
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -79,24 +62,48 @@ struct SecondView: View {
                 }
                 .background(.white)
                 .cornerRadius(10)
+                .frame(maxHeight: 320)
                 
+                Spacer()
                 
+                Button {
+                    print("Save")
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.red)
+                        Text("Save")
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                }
+                .frame(height: 50)
                 
-            
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(style: StrokeStyle(lineWidth: 2))
+                            .foregroundColor(.red)
+                        Text("Cancel")
+                            .bold()
+                            .foregroundColor(.red)
+                    }
+                }
+                .frame(height: 50)
                 
+                Spacer()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
-            .padding(.top, 75)
-            
-            
+            .padding(.top, 30)
         }
-        
     }
 }
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondView()
+        ContentView()
     }
 }

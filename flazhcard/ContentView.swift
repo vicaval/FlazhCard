@@ -18,8 +18,8 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     @State private var hasContent = false
-
-
+    
+    @State var showView = false
 
     var body: some View {
         
@@ -41,14 +41,15 @@ struct ContentView: View {
                     
                     Button {
                         hasContent.toggle()
-//                        showView.toggle()
+                        showView.toggle()
                     } label: {
                         Text("+")
                             .font(.custom("Poppins-Medium", size: 40))
                             .foregroundColor(Color.red)
                     }
-//                    sheet(isPresented: $showView) {
-//                                    SecondView()
+                    .sheet(isPresented: $showView) {
+                                    SecondView()
+                    }
                     
                 }
                 .padding(.horizontal)
