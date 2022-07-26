@@ -80,6 +80,10 @@ struct SecondView: View {
                 .background(.white)
                 .cornerRadius(10)
                 
+                
+                
+            
+                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)

@@ -51,7 +51,7 @@ struct OnboardingContainerView: View {
                 .animation(.default, value: selection)
                 
                 Button {
-                    if selection >= 5 {
+                    if selection >= 1 {
                         selection = 0
                     }
                     
@@ -59,7 +59,7 @@ struct OnboardingContainerView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(selection == 4 ? .red : .gray)
+                            .foregroundColor(selection == 1 ? .red : .gray)
                         Text(selection == 4 ? "Continue" : "Next")
                             .bold()
                             .foregroundColor(.white)
