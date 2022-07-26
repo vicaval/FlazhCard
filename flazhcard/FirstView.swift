@@ -18,7 +18,7 @@ struct FirstView: View {
                    Button {
                        showView.toggle()
                    } label: {
-                       Text("Present Screen")
+                       Text("Nyoba")
                            .font(.title2)
                            .padding()
                            .padding(.horizontal)

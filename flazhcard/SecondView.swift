@@ -11,11 +11,17 @@ struct SecondView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var showView = false
+    @State private var title: String = ""
+    @State private var description: String = ""
+    
+    init() {
+        UITextView.appearance().backgroundColor = .clear
+    }
     
     var body: some View {
         
         ZStack {
-            Color.orange
+            Color(red: 245/225, green: 245/225, blue: 245/225)
                 .ignoresSafeArea()
             
             VStack {
@@ -23,17 +29,58 @@ struct SecondView: View {
                     presentationMode.wrappedValue.dismiss()
                     
                 } label: {
-                    Image(systemName: "x.circle")
+                    Text("Cancel")
                         .foregroundColor(.black)
-                        .font(.largeTitle)
+                        .font(.custom("Poppins-Regular", size: 15))
                 }
+                
                 .padding()
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
                 Spacer()
             }
             
-            Text("This is the second one")
-                .font(.title2.weight(.heavy))
+            
+            VStack {
+                Text("Title")
+                    .font(.custom("Poppins-SemiBold", size: 18))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                ZStack {
+                    TextField("Add Title", text: $title)
+                        .padding(15)
+                }
+                .background(.white)
+                .cornerRadius(10)
+                
+                
+                Text("Description")
+                    .font(.custom("Poppins-SemiBold", size: 18))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                ZStack(alignment: .topLeading) {
+                    
+                    if description.isEmpty{
+                        Text("Add Description")
+                            .padding(17)
+                            .padding(.top, 5)
+                            .foregroundColor(.black)
+                    }
+                    
+                    TextEditor(text: $description)
+                        .padding(15)
+                        .background(.white)
+                        .opacity(0.8)
+                  
+                    
+                }
+                .background(.white)
+                .cornerRadius(10)
+                
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
+            
         }
         
     }

@@ -20,6 +20,7 @@ struct ContentView: View {
     @State private var hasContent = false
 
 
+
     var body: some View {
         
         
@@ -40,6 +41,7 @@ struct ContentView: View {
                     
                     Button {
                         hasContent.toggle()
+//                        showView.toggle()
                     } label: {
                         Text("+")
                             .font(.custom("Poppins-Medium", size: 40))

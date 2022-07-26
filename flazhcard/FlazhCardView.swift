@@ -61,6 +61,7 @@ struct FlazhCardView: View {
                                 Text("Finish")
                             }
                         }
+                        .font(.custom("Poppins-Regular", size: 15))
                         .padding(.horizontal, 20)
                         .padding(.top, 5)
                         .foregroundColor(.white)

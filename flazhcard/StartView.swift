@@ -49,7 +49,7 @@ struct StartView: View {
                             .frame(height: 80.0)
                         
                         VStack(alignment: .leading)  {
-                            Text("Design")
+                            Text("Accessibilty")
                                 .font(.custom("Poppins-Bold", size: 18))
                                 .multilineTextAlignment(.leading)
                             
