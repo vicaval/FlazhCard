@@ -10,6 +10,7 @@ import SwiftUI
 struct SecondView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    
     @State var showView = false
     @State private var title: String = ""
     @State private var description: String = ""
@@ -21,7 +22,8 @@ struct SecondView: View {
     var body: some View {
         
         ZStack {
-            Color(red: 245/225, green: 245/225, blue: 245/225)
+            
+            Color(red: 245/255, green: 245/255, blue: 245/255)
                 .ignoresSafeArea()
             
             VStack {
@@ -48,6 +50,7 @@ struct SecondView: View {
                 
                 ZStack {
                     TextField("Add Title", text: $title)
+                        .font(.custom("Poppins-Regular", size: 16))
                         .padding(15)
                 }
                 .background(.white)
@@ -60,19 +63,19 @@ struct SecondView: View {
                 
                 ZStack(alignment: .topLeading) {
                     
-                    if description.isEmpty{
-                        Text("Add Description")
-                            .padding(17)
-                            .padding(.top, 5)
-                            .foregroundColor(.black)
-                    }
-                    
                     TextEditor(text: $description)
+                        .font(.custom("Poppins-Regular", size: 16))
                         .padding(15)
                         .background(.white)
-                        .opacity(0.8)
-                  
                     
+                    if description.isEmpty {
+                        Text("Add Description")
+                            .font(.custom("Poppins-Regular", size: 16))
+                            .padding(17)
+                            .padding(.top, 5)
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+                    }
                 }
                 .background(.white)
                 .cornerRadius(10)
@@ -80,6 +83,8 @@ struct SecondView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
+            .padding(.top, 75)
+            
             
         }
         
