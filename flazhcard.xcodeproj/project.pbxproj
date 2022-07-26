@@ -21,6 +21,7 @@
 		C248BEC4288E52CC00FAD94C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */; };
 		C248BEC5288E52CC00FAD94C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */; };
 		C248BEC6288E52CC00FAD94C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */; };
+		C248BEC9288F8F3A00FAD94C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEC8288F8F3A00FAD94C /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		C248BEC8288F8F3A00FAD94C /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				C248BEBE288E512D00FAD94C /* Info.plist */,
 				C248BE932888F2A900FAD94C /* flazhcardApp.swift */,
 				C248BE952888F2A900FAD94C /* ContentView.swift */,
+				C248BEC8288F8F3A00FAD94C /* StartView.swift */,
 				C248BEB4288E3B5300FAD94C /* Onboarding */,
 				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
 				C248BE972888F2AB00FAD94C /* Assets.xcassets */,
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C248BEC9288F8F3A00FAD94C /* StartView.swift in Sources */,
 				C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */,
 				C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */,
 				C248BE962888F2A900FAD94C /* ContentView.swift in Sources */,

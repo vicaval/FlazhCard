@@ -33,14 +33,14 @@ struct OnboardingContainerView: View {
                     OnboardingView(
                         imageName: "onboard_1",
                         title: "No more\nWasted Paper",
-                        content: "FlazhCard helps you to review\nyour notes easily 1"
+                        content: "FlazhCard helps you to review\nyour notes easily"
                     )
                     .tag(0)
                     
                     OnboardingView(
                         imageName: "onboard_2",
-                        title: "Easier, And Faster",
-                        content: "Take your notes, review, and memorize at lightning fast speeds"
+                        title: "Easier,\nAnd Faster",
+                        content: "Take your notes, review,and\nmemorize at lightning fast speeds"
                     )
                     .tag(1)
                     

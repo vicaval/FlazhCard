@@ -27,10 +27,10 @@ struct OnboardingView: View {
             VStack(alignment: .leading, spacing: 20) {
                 
                 Text(title)
-                    .font(.system(size: 40, weight: .bold))
+                    .font(.custom("Poppins-Bold", size: 41))
                 
                 Text(content)
-                    .font(.system(size: 24, weight: .regular))
+                    .font(.custom("Poppins-Regular", size: 18))
                     .lineSpacing(5)
             }
             .padding(.leading, 30)

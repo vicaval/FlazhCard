@@ -15,7 +15,9 @@ struct FlazhCardView: View {
                 .resizable()
                 .ignoresSafeArea()
             
+            
             VStack {
+                
                 ZStack {
                     Rectangle()
                         .frame(width: 339, height: 428)
@@ -31,10 +33,41 @@ struct FlazhCardView: View {
                         .frame(width: 33, height: 33)
                         .position(isFlipped ? CGPoint(x: 65, y: 180) : CGPoint(x: 325, y: 180))
                     
-                    Text("The Use of Accessibility")
-                        .font(.custom("Poppins-SemiBold", size: 20))
-                        .padding(.all, 50.0)
+                    
+                    VStack {
+                        
+                        Text("The Use of Accessibility")
+                            .font(.custom("Poppins-SemiBold", size: 20))
+                            .multilineTextAlignment(.center)
+                            .padding(.all, 50.0)
+                        
+                    }
+                    .padding(.top, 120)
                 }
+                .overlay(
+                    VStack {
+                        HStack {
+                            Button {
+                                print("Test123")
+                            } label: {
+                                Text("Exit")
+                            }
+                            
+                            Spacer()
+                            
+                            Button {
+                                print("Test123")
+                            } label: {
+                                Text("Finish")
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 5)
+                        .foregroundColor(.white)
+                        
+                        Spacer()
+                    }
+                )
                 
                 Spacer()
                 

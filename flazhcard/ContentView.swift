@@ -9,12 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State private var hasContent = false
 
     var body: some View {
         
@@ -27,15 +30,20 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     Text("Your Notes")
-                        .font(.largeTitle.bold())
+                        .font(.custom("Poppins-Bold", size: 35))
                         .foregroundColor(Color.black)
                         .multilineTextAlignment(.leading)
                     
                     Spacer()
                     
-                    Text("+")
-                        .font(.title.bold())
-                        .foregroundColor(Color.red)
+                    Button {
+                        hasContent.toggle()
+                    } label: {
+                        Text("+")
+                            .font(.custom("Poppins-Medium", size: 40))
+                            .foregroundColor(Color.red)
+                    }
+
                     
                 }
                 .padding(.horizontal)
@@ -43,27 +51,35 @@ struct ContentView: View {
                 
                 ScrollView {
                     
-                    ZStack(alignment: .leading) {
-                        Rectangle()
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-                            .frame(height: 80.0)
-                        
-                        VStack(alignment: .leading)  {
-                            Text("Design")
-                                .font(.headline)
-                                .multilineTextAlignment(.leading)
-                                .padding(.bottom, -3.0)
-                            
-                            Text("5 FlazhCards")
+                    if hasContent {
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                                .frame(height: 80.0)
+
+                            VStack(alignment: .leading)  {
+                                Text("Design")
+                                    .font(.custom("Poppins-Bold", size: 18))
+                                    .multilineTextAlignment(.leading)
+
+
+                                Text("5 FlazhCards")
+                                    .font(.custom("Poppins-Regular", size: 16))
+                            }
+                            .padding(.leading, 20.0)
                         }
-                        .padding(.leading, 20.0)
+                    } else {
+                        Text("Let's start by adding\nnote's category")
+                            .font(.custom("Poppins-Bold", size: 20))
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.main.bounds.width - 40)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 200)
                     }
-                        
                 }
                 .padding(.horizontal)
                 .padding(.top, 75)
-                
             }
         }
 //        NavigationView {
