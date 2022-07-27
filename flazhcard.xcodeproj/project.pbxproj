@@ -26,6 +26,8 @@
 		C281BE2C289027DF00153D21 /* addNotesCategoryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */; };
 		C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */; };
 		C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE302890E5B000153D21 /* NotesCategoryModel.swift */; };
+		C281BE372890F02200153D21 /* FlazhCardNotesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */; };
+		C281BE392890F1EC00153D21 /* FlazhCardNotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNotesCategoryAlertView.swift; sourceTree = "<group>"; };
 		C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCategoryContainerView.swift; sourceTree = "<group>"; };
 		C281BE302890E5B000153D21 /* NotesCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryModel.swift; sourceTree = "<group>"; };
+		C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesContainerView.swift; sourceTree = "<group>"; };
+		C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,6 @@
 				C248BEB4288E3B5300FAD94C /* Onboarding */,
 				C281BE2D2890E43800153D21 /* Notes Category */,
 				C281BE322890ED1700153D21 /* Category Details */,
-				C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */,
 				C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */,
 				C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */,
 				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
@@ -142,6 +145,9 @@
 		C281BE322890ED1700153D21 /* Category Details */ = {
 			isa = PBXGroup;
 			children = (
+				C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */,
+				C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */,
+				C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */,
 			);
 			path = "Category Details";
 			sourceTree = "<group>";
@@ -223,7 +229,9 @@
 				C248BEC9288F8F3A00FAD94C /* notesCategoryDetailsView.swift in Sources */,
 				C281BE2C289027DF00153D21 /* addNotesCategoryAlertView.swift in Sources */,
 				C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */,
+				C281BE392890F1EC00153D21 /* FlazhCardNotesModel.swift in Sources */,
 				C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */,
+				C281BE372890F02200153D21 /* FlazhCardNotesContainerView.swift in Sources */,
 				C248BE962888F2A900FAD94C /* notesCategoryView.swift in Sources */,
 				C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */,
 				C248BEAF288A40AC00FAD94C /* OnboardingModel.swift in Sources */,

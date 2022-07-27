@@ -12,6 +12,12 @@ struct notesCategoryDetailsView: View {
     
     @State var showView = false
     
+//    // Dummy Category Data
+//    var flazhcardnotes = [
+//        FlazhCardNotesModel(flazhcardName: "The Use of Accessibility", flazhcardDescription: "lorem ipsum")
+//
+//    ]
+    
     var body: some View {
         
         ZStack(alignment: .bottom) {
@@ -47,24 +53,7 @@ struct notesCategoryDetailsView: View {
                 
                 ScrollView {
                     
-                    ZStack(alignment: .leading) {
-                        Rectangle()
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-                            .frame(height: 80.0)
-                        
-                        VStack(alignment: .leading)  {
-                            Text("Accessibilty")
-                                .font(.custom("Poppins-Bold", size: 18))
-                                .multilineTextAlignment(.leading)
-                            
-                            
-                            Text("Lorem Ipsum hhuggjghh gughghg hg...")
-                                .font(.custom("Poppins-Regular", size: 16))
-                        }
-                        .padding(.leading, 20.0)
-                        
-                    }
+                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 75)
