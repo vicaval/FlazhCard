@@ -28,6 +28,10 @@
 		C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE302890E5B000153D21 /* NotesCategoryModel.swift */; };
 		C281BE372890F02200153D21 /* FlazhCardNotesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */; };
 		C281BE392890F1EC00153D21 /* FlazhCardNotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */; };
+		C281BE3C2891318000153D21 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C281BE3B2891318000153D21 /* Realm */; };
+		C281BE3E2891318000153D21 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C281BE3D2891318000153D21 /* RealmSwift */; };
+		C281BE402891355500153D21 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE3F2891355500153D21 /* Category.swift */; };
+		C281BE42289136E300153D21 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE41289136E300153D21 /* CategoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,8 @@
 		C281BE302890E5B000153D21 /* NotesCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryModel.swift; sourceTree = "<group>"; };
 		C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesContainerView.swift; sourceTree = "<group>"; };
 		C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesModel.swift; sourceTree = "<group>"; };
+		C281BE3F2891355500153D21 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C281BE41289136E300153D21 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C281BE3E2891318000153D21 /* RealmSwift in Frameworks */,
+				C281BE3C2891318000153D21 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +100,7 @@
 				C281BE2D2890E43800153D21 /* Notes Category */,
 				C281BE322890ED1700153D21 /* Category Details */,
 				C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */,
+				C281BE41289136E300153D21 /* CategoryViewModel.swift */,
 				C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */,
 				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
 				C248BE972888F2AB00FAD94C /* Assets.xcassets */,
@@ -136,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				C281BE302890E5B000153D21 /* NotesCategoryModel.swift */,
+				C281BE3F2891355500153D21 /* Category.swift */,
 				C248BE952888F2A900FAD94C /* notesCategoryView.swift */,
 				C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */,
 			);
@@ -168,6 +178,10 @@
 			dependencies = (
 			);
 			name = flazhcard;
+			packageProductDependencies = (
+				C281BE3B2891318000153D21 /* Realm */,
+				C281BE3D2891318000153D21 /* RealmSwift */,
+			);
 			productName = flazhcard;
 			productReference = C248BE902888F2A900FAD94C /* flazhcard.app */;
 			productType = "com.apple.product-type.application";
@@ -196,6 +210,9 @@
 				Base,
 			);
 			mainGroup = C248BE872888F2A900FAD94C;
+			packageReferences = (
+				C281BE3A2891318000153D21 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = C248BE912888F2A900FAD94C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,12 +252,14 @@
 				C248BE962888F2A900FAD94C /* notesCategoryView.swift in Sources */,
 				C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */,
 				C248BEAF288A40AC00FAD94C /* OnboardingModel.swift in Sources */,
+				C281BE42289136E300153D21 /* CategoryViewModel.swift in Sources */,
 				C248BEAD288A3D2D00FAD94C /* OnboardingContainerView.swift in Sources */,
 				C248BECB288F9AC900FAD94C /* addFlazhCardView.swift in Sources */,
 				C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */,
 				C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */,
 				C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */,
 				C248BEAB2889A56000FAD94C /* OnboardingContentView.swift in Sources */,
+				C281BE402891355500153D21 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +462,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C281BE3A2891318000153D21 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C281BE3B2891318000153D21 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C281BE3A2891318000153D21 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C281BE3D2891318000153D21 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C281BE3A2891318000153D21 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C248BE9E2888F2AB00FAD94C /* flazhcard.xcdatamodeld */ = {

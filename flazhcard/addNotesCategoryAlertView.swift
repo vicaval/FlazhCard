@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct addNotesCategoryAlertView: View {
-    
+    @EnvironmentObject var viewModel: CategoryViewModel
     
     let screenSize = UIScreen.main.bounds
     
@@ -30,7 +30,10 @@ struct addNotesCategoryAlertView: View {
             
             Button {
                 self.isShown = false
-                print(text)
+//                viewModel.categories.append(Category(id: UUID(), categoryName: text))
+                viewModel.categoryNames.append(text)
+                print(viewModel.categoryNames)
+//                print(viewModel.categories[0].categoryName)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 12)
@@ -58,6 +61,6 @@ struct addNotesCategoryAlertView: View {
 
 struct addalertView_Previews: PreviewProvider {
     static var previews: some View {
-        addNotesCategoryAlertView(isShown: .constant(true), text: .constant(""))
+        addNotesCategoryAlertView(isShown: .constant(true), text: .constant("")).environmentObject(CategoryViewModel())
     }
 }
