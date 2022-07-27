@@ -28,7 +28,6 @@
 		C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE302890E5B000153D21 /* NotesCategoryModel.swift */; };
 		C281BE372890F02200153D21 /* FlazhCardNotesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */; };
 		C281BE392890F1EC00153D21 /* FlazhCardNotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */; };
-		C281BE402891355500153D21 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE3F2891355500153D21 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		C281BE302890E5B000153D21 /* NotesCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryModel.swift; sourceTree = "<group>"; };
 		C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesContainerView.swift; sourceTree = "<group>"; };
 		C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesModel.swift; sourceTree = "<group>"; };
-		C281BE3F2891355500153D21 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +136,6 @@
 			children = (
 				C281BE302890E5B000153D21 /* NotesCategoryModel.swift */,
 				C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */,
-				C281BE3F2891355500153D21 /* Category.swift */,
 				C248BE952888F2A900FAD94C /* notesCategoryView.swift */,
 				C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */,
 			);
@@ -248,7 +245,6 @@
 				C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */,
 				C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */,
 				C248BEAB2889A56000FAD94C /* OnboardingContentView.swift in Sources */,
-				C281BE402891355500153D21 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

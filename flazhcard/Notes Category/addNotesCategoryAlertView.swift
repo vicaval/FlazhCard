@@ -13,8 +13,8 @@ struct addNotesCategoryAlertView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
         
-    @FetchRequest(entity: CategoryNew.entity(), sortDescriptors: [])
-    private var products: FetchedResults<CategoryNew>
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [])
+    private var products: FetchedResults<Category>
     
     @Binding var isShown: Bool
     @Binding var text: String
@@ -64,7 +64,7 @@ struct addNotesCategoryAlertView: View {
     private func addCategory() {
         
         withAnimation {
-            let category = CategoryNew(context: viewContext)
+            let category = Category(context: viewContext)
             category.categoryId = UUID()
             category.categoryName = text
             

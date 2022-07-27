@@ -18,8 +18,8 @@ struct notesCategoryView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(entity: CategoryNew.entity(), sortDescriptors: [NSSortDescriptor(key: "categoryName", ascending: true)])
-    private var categories: FetchedResults<CategoryNew>
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(key: "categoryName", ascending: true)])
+    private var categories: FetchedResults<Category>
     
     @State private var hasContent = false
     
