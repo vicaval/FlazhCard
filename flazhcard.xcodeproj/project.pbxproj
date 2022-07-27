@@ -24,6 +24,8 @@
 		C248BEC9288F8F3A00FAD94C /* notesCategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */; };
 		C248BECB288F9AC900FAD94C /* addFlazhCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */; };
 		C281BE2C289027DF00153D21 /* addNotesCategoryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */; };
+		C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */; };
+		C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE302890E5B000153D21 /* NotesCategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesCategoryDetailsView.swift; sourceTree = "<group>"; };
 		C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFlazhCardView.swift; sourceTree = "<group>"; };
 		C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNotesCategoryAlertView.swift; sourceTree = "<group>"; };
+		C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCategoryContainerView.swift; sourceTree = "<group>"; };
+		C281BE302890E5B000153D21 /* NotesCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +84,12 @@
 			children = (
 				C248BEBE288E512D00FAD94C /* Info.plist */,
 				C248BE932888F2A900FAD94C /* flazhcardApp.swift */,
-				C248BE952888F2A900FAD94C /* notesCategoryView.swift */,
+				C248BEB4288E3B5300FAD94C /* Onboarding */,
+				C281BE2D2890E43800153D21 /* Notes Category */,
+				C281BE322890ED1700153D21 /* Category Details */,
 				C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */,
 				C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */,
 				C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */,
-				C248BEB4288E3B5300FAD94C /* Onboarding */,
 				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
 				C248BE972888F2AB00FAD94C /* Assets.xcassets */,
 				C248BE9C2888F2AB00FAD94C /* Persistence.swift */,
@@ -122,6 +127,23 @@
 				C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C281BE2D2890E43800153D21 /* Notes Category */ = {
+			isa = PBXGroup;
+			children = (
+				C281BE302890E5B000153D21 /* NotesCategoryModel.swift */,
+				C248BE952888F2A900FAD94C /* notesCategoryView.swift */,
+				C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */,
+			);
+			path = "Notes Category";
+			sourceTree = "<group>";
+		};
+		C281BE322890ED1700153D21 /* Category Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Category Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +225,11 @@
 				C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */,
 				C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */,
 				C248BE962888F2A900FAD94C /* notesCategoryView.swift in Sources */,
+				C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */,
 				C248BEAF288A40AC00FAD94C /* OnboardingModel.swift in Sources */,
 				C248BEAD288A3D2D00FAD94C /* OnboardingContainerView.swift in Sources */,
 				C248BECB288F9AC900FAD94C /* addFlazhCardView.swift in Sources */,
+				C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */,
 				C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */,
 				C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */,
 				C248BEAB2889A56000FAD94C /* OnboardingContentView.swift in Sources */,
