@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct addNotesCategoryAlertView: View {
-    @EnvironmentObject var viewModel: CategoryViewModel
     
     let screenSize = UIScreen.main.bounds
+    
+    @Environment(\.managedObjectContext) private var viewContext
+        
+    @FetchRequest(entity: CategoryNew.entity(), sortDescriptors: [])
+    private var products: FetchedResults<CategoryNew>
     
     @Binding var isShown: Bool
     @Binding var text: String
@@ -27,13 +31,12 @@ struct addNotesCategoryAlertView: View {
             TextField("", text: $text)
                 .font(.custom("Poppins-Regular", size: 18))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
             
             Button {
                 self.isShown = false
-//                viewModel.categories.append(Category(id: UUID(), categoryName: text))
-                viewModel.categoryNames.append(text)
-                print(viewModel.categoryNames)
-//                print(viewModel.categories[0].categoryName)
+                addCategory()
+                self.text = ""
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 12)
@@ -57,10 +60,27 @@ struct addNotesCategoryAlertView: View {
 
         
     }
-}
-
-struct addalertView_Previews: PreviewProvider {
-    static var previews: some View {
-        addNotesCategoryAlertView(isShown: .constant(true), text: .constant("")).environmentObject(CategoryViewModel())
+    
+    private func addCategory() {
+        
+        withAnimation {
+            let category = CategoryNew(context: viewContext)
+            category.categoryId = UUID()
+            category.categoryName = text
+            
+            saveContext()
+        }
+    }
+    
+    private func saveContext() {
+        do {
+            try viewContext.save()
+            print("Apa ye")
+        } catch {
+            let error = error as NSError
+            fatalError("An error occured: \(error)")
+        }
     }
 }
+
+

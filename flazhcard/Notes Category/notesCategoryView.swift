@@ -10,12 +10,16 @@ import CoreData
 
 struct notesCategoryView: View {
     
+//    init() {
+//        UITableView.appearance().separatorStyle = .none
+//        UITableView.appearance().backgroundColor = .clear
+//        UITableViewCell.appearance().backgroundColor = .clear
+//    }
+    
     @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    
+    @FetchRequest(entity: CategoryNew.entity(), sortDescriptors: [NSSortDescriptor(key: "categoryName", ascending: true)])
+    private var categories: FetchedResults<CategoryNew>
     
     @State private var hasContent = false
     
@@ -23,16 +27,6 @@ struct notesCategoryView: View {
     @State private var isPresented: Bool = false
     @State private var text: String = ""
     
-    // Dummy Category Data
-    var categories = [
-        NotesCategoryModel(categoryName: "Design", totalFlazhCard: 1),
-        NotesCategoryModel(categoryName: "Tech", totalFlazhCard: 2),
-        NotesCategoryModel(categoryName: "Product", totalFlazhCard: 3),
-        NotesCategoryModel(categoryName: "Romance", totalFlazhCard: 4),
-        NotesCategoryModel(categoryName: "Color", totalFlazhCard: 5),
-        NotesCategoryModel(categoryName: "Code", totalFlazhCard: 6)
-    ]
-
     var body: some View {
         
         NavigationView {
@@ -66,17 +60,19 @@ struct notesCategoryView: View {
                     
                     ScrollView {
                         
-                        if hasContent {
+                        if categories.count > 0 {
                             
                             ForEach(categories, id: \.id) { category in
                                 
                                 NavigationLink {
                                     Text("Hello, world!")
                                 } label: {
-                                    CardCategoryContainerView(categoryName: category.categoryName, flazhcardCount: category.totalFlazhCard)
+                                    CardCategoryContainerView(categoryName: category.categoryName ?? "", flazhcardCount: categories.count)
                                 }
                                 .foregroundColor(.black)
+                                .buttonStyle(.borderless)
                             }
+                            .onDelete(perform: deleteProducts(offsets:))
                         } else {
                             Text("Let's start by adding\nnote's category")
                                 .font(.custom("Poppins-Bold", size: 20))
@@ -88,6 +84,7 @@ struct notesCategoryView: View {
                     }
                     .padding(.horizontal)
                     .padding(.top, 75)
+                    .background(Color.clear)
                 }
             }
             .navigationBarHidden(true)
@@ -100,44 +97,30 @@ struct notesCategoryView: View {
                     addNotesCategoryAlertView(isShown: $isPresented, text: $text)
                 }
                     .animation(.easeIn)
-        )
+            )
         }
     }
-
-    private func addItem() {
+    
+    private func deleteProducts(offsets: IndexSet) {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            offsets.map { categories[$0] }.forEach(viewContext.delete)
+                saveContext()
             }
-        }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+    
+    private func saveContext() {
+        do {
+            try viewContext.save()
+            print("Apa ye")
+        } catch {
+            let error = error as NSError
+            fatalError("An error occured: \(error)")
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        notesCategoryView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        notesCategoryView()
     }
 }

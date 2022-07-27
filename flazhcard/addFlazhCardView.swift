@@ -10,7 +10,6 @@ import SwiftUI
 struct addFlazhCardView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = CategoryViewModel()
     
     @State var showView = false
     @State private var title: String = ""
@@ -68,9 +67,7 @@ struct addFlazhCardView: View {
                 Spacer()
                 
                 Button {
-//                    viewModel.cards.append(Card(id: UUID(), title: title, description: description))
-                    print(viewModel.cards)
-                    print(viewModel.cards[0].title)
+                    
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
