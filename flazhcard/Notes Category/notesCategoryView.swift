@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct notesCategoryView: View {
+struct NotesCategoryView: View {
     
 //    init() {
 //        UITableView.appearance().separatorStyle = .none
@@ -65,7 +65,7 @@ struct notesCategoryView: View {
                             ForEach(categories, id: \.id) { category in
                                 
                                 NavigationLink {
-                                    Text("Hello, world!")
+                                    NotesCategoryDetailsView(flazhCardTitle: category.categoryId?.uuidString ?? "", flazcCardDesc: "")
                                 } label: {
                                     CardCategoryContainerView(categoryName: category.categoryName ?? "", flazhcardCount: categories.count)
                                 }
@@ -88,13 +88,14 @@ struct notesCategoryView: View {
                 }
             }
             .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
             .overlay(
                 ZStack{
                     Rectangle()
                         .ignoresSafeArea()
                         .opacity(isPresented ? 0.3 : 0)
                         .foregroundColor(.black)
-                    addNotesCategoryAlertView(isShown: $isPresented, text: $text)
+                    AddNotesCategoryAlertView(isShown: $isPresented, text: $text)
                 }
                     .animation(.easeIn)
             )
@@ -121,6 +122,6 @@ struct notesCategoryView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        notesCategoryView()
+        NotesCategoryView()
     }
 }

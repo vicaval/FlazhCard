@@ -8,15 +8,17 @@
 import SwiftUI
 
 
-struct notesCategoryDetailsView: View {
+struct NotesCategoryDetailsView: View {
     
     @State var showView = false
     
-//    // Dummy Category Data
-//    var flazhcardnotes = [
-//        FlazhCardNotesModel(flazhcardName: "The Use of Accessibility", flazhcardDescription: "lorem ipsum")
-//
-//    ]
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: Card.entity(), sortDescriptors: [])
+    private var products: FetchedResults<Card>
+    
+    var flazhCardTitle: String
+    var flazcCardDesc: String
     
     var body: some View {
         
@@ -45,39 +47,40 @@ struct notesCategoryDetailsView: View {
                             .foregroundColor(Color.red)
                     }
                     .sheet(isPresented: $showView) {
-                                    addFlazhCardView()
+                        AddFlazhCardView()
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top, 89)
+                .padding(.top, 95)
                 
                 ScrollView {
                     
-                    
+                    FlazhCardNotesContainerView(flazhcardName: flazhCardTitle, flazhcardDescription: "Lorem ipsum dolor sit amet")
                 }
                 .padding(.horizontal)
                 .padding(.top, 75)
             }
             
-            ZStack(alignment: .top) {
-                Rectangle()
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    .frame(maxHeight: 100)
-                
-                Button {
-                    print("Testing")
-                } label: {
-                    Image("Start_Button")
-                }
-                .offset(x: 0, y: -30)
-            }
+            StartButton()
         }
+        .ignoresSafeArea()
     }
-    
-    struct StartView_Previews: PreviewProvider {
-        static var previews: some View {
-            notesCategoryDetailsView()
+}
+
+struct StartButton: View {
+    var body: some View {
+        ZStack(alignment: .top) {
+            Rectangle()
+                .foregroundColor(.white)
+                .cornerRadius(20)
+                .frame(maxHeight: 100)
+            
+            Button {
+                print("Testing")
+            } label: {
+                Image("Start_Button")
+            }
+            .offset(x: 0, y: -30)
         }
     }
 }

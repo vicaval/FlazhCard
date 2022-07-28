@@ -7,9 +7,14 @@
 
 import SwiftUI
 
-struct addFlazhCardView: View {
+struct AddFlazhCardView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @Environment(\.managedObjectContext) private var viewContext
+        
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [])
+    private var products: FetchedResults<Category>
     
     @State var showView = false
     @State private var title: String = ""
@@ -100,10 +105,33 @@ struct addFlazhCardView: View {
             .padding(.top, 30)
         }
     }
+    
+    private func addFlazhCard() {
+        
+        withAnimation {
+            
+            let card = Card(context: viewContext)
+            card.cardId = UUID()
+            card.cardTitle = title
+            card.cardDesc = description
+            
+            saveContext()
+        }
+    }
+    
+    private func saveContext() {
+        do {
+            try viewContext.save()
+            print("Apa ye")
+        } catch {
+            let error = error as NSError
+            fatalError("An error occured: \(error)")
+        }
+    }
 }
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        notesCategoryView()
+        AddFlazhCardView()
     }
 }

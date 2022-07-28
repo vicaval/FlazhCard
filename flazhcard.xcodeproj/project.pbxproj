@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE932888F2A900FAD94C /* flazhcardApp.swift */; };
-		C248BE962888F2A900FAD94C /* notesCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE952888F2A900FAD94C /* notesCategoryView.swift */; };
+		C248BE962888F2A900FAD94C /* NotesCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE952888F2A900FAD94C /* NotesCategoryView.swift */; };
 		C248BE982888F2AB00FAD94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C248BE972888F2AB00FAD94C /* Assets.xcassets */; };
 		C248BE9B2888F2AB00FAD94C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C248BE9A2888F2AB00FAD94C /* Preview Assets.xcassets */; };
 		C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE9C2888F2AB00FAD94C /* Persistence.swift */; };
@@ -21,19 +21,17 @@
 		C248BEC4288E52CC00FAD94C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */; };
 		C248BEC5288E52CC00FAD94C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */; };
 		C248BEC6288E52CC00FAD94C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */; };
-		C248BEC9288F8F3A00FAD94C /* notesCategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */; };
-		C248BECB288F9AC900FAD94C /* addFlazhCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */; };
-		C281BE2C289027DF00153D21 /* addNotesCategoryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */; };
+		C248BEC9288F8F3A00FAD94C /* NotesCategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BEC8288F8F3A00FAD94C /* NotesCategoryDetailsView.swift */; };
+		C248BECB288F9AC900FAD94C /* AddFlazhCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BECA288F9AC900FAD94C /* AddFlazhCardView.swift */; };
+		C281BE2C289027DF00153D21 /* AddNotesCategoryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2B289027DF00153D21 /* AddNotesCategoryAlertView.swift */; };
 		C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */; };
-		C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE302890E5B000153D21 /* NotesCategoryModel.swift */; };
 		C281BE372890F02200153D21 /* FlazhCardNotesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */; };
-		C281BE392890F1EC00153D21 /* FlazhCardNotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C248BE902888F2A900FAD94C /* flazhcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flazhcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C248BE932888F2A900FAD94C /* flazhcardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flazhcardApp.swift; sourceTree = "<group>"; };
-		C248BE952888F2A900FAD94C /* notesCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesCategoryView.swift; sourceTree = "<group>"; };
+		C248BE952888F2A900FAD94C /* NotesCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryView.swift; sourceTree = "<group>"; };
 		C248BE972888F2AB00FAD94C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C248BE9A2888F2AB00FAD94C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C248BE9C2888F2AB00FAD94C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -47,13 +45,11 @@
 		C248BEC0288E52CC00FAD94C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		C248BEC1288E52CC00FAD94C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		C248BEC2288E52CC00FAD94C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesCategoryDetailsView.swift; sourceTree = "<group>"; };
-		C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFlazhCardView.swift; sourceTree = "<group>"; };
-		C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNotesCategoryAlertView.swift; sourceTree = "<group>"; };
+		C248BEC8288F8F3A00FAD94C /* NotesCategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryDetailsView.swift; sourceTree = "<group>"; };
+		C248BECA288F9AC900FAD94C /* AddFlazhCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlazhCardView.swift; sourceTree = "<group>"; };
+		C281BE2B289027DF00153D21 /* AddNotesCategoryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesCategoryAlertView.swift; sourceTree = "<group>"; };
 		C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCategoryContainerView.swift; sourceTree = "<group>"; };
-		C281BE302890E5B000153D21 /* NotesCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryModel.swift; sourceTree = "<group>"; };
 		C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesContainerView.swift; sourceTree = "<group>"; };
-		C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlazhCardNotesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +87,6 @@
 				C248BEB4288E3B5300FAD94C /* Onboarding */,
 				C281BE2D2890E43800153D21 /* Notes Category */,
 				C281BE322890ED1700153D21 /* Category Details */,
-				C248BECA288F9AC900FAD94C /* addFlazhCardView.swift */,
 				C248BEB2288CF58900FAD94C /* FlazhCardView.swift */,
 				C248BE972888F2AB00FAD94C /* Assets.xcassets */,
 				C248BE9C2888F2AB00FAD94C /* Persistence.swift */,
@@ -134,9 +129,8 @@
 		C281BE2D2890E43800153D21 /* Notes Category */ = {
 			isa = PBXGroup;
 			children = (
-				C281BE302890E5B000153D21 /* NotesCategoryModel.swift */,
-				C281BE2B289027DF00153D21 /* addNotesCategoryAlertView.swift */,
-				C248BE952888F2A900FAD94C /* notesCategoryView.swift */,
+				C281BE2B289027DF00153D21 /* AddNotesCategoryAlertView.swift */,
+				C248BE952888F2A900FAD94C /* NotesCategoryView.swift */,
 				C281BE2E2890E45D00153D21 /* CardCategoryContainerView.swift */,
 			);
 			path = "Notes Category";
@@ -145,9 +139,9 @@
 		C281BE322890ED1700153D21 /* Category Details */ = {
 			isa = PBXGroup;
 			children = (
-				C281BE382890F1EC00153D21 /* FlazhCardNotesModel.swift */,
-				C248BEC8288F8F3A00FAD94C /* notesCategoryDetailsView.swift */,
+				C248BEC8288F8F3A00FAD94C /* NotesCategoryDetailsView.swift */,
 				C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */,
+				C248BECA288F9AC900FAD94C /* AddFlazhCardView.swift */,
 			);
 			path = "Category Details";
 			sourceTree = "<group>";
@@ -230,17 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C248BEC9288F8F3A00FAD94C /* notesCategoryDetailsView.swift in Sources */,
-				C281BE2C289027DF00153D21 /* addNotesCategoryAlertView.swift in Sources */,
+				C248BEC9288F8F3A00FAD94C /* NotesCategoryDetailsView.swift in Sources */,
+				C281BE2C289027DF00153D21 /* AddNotesCategoryAlertView.swift in Sources */,
 				C248BE9D2888F2AB00FAD94C /* Persistence.swift in Sources */,
-				C281BE392890F1EC00153D21 /* FlazhCardNotesModel.swift in Sources */,
 				C248BEA02888F2AB00FAD94C /* flazhcard.xcdatamodeld in Sources */,
 				C281BE372890F02200153D21 /* FlazhCardNotesContainerView.swift in Sources */,
-				C248BE962888F2A900FAD94C /* notesCategoryView.swift in Sources */,
-				C281BE312890E5B000153D21 /* NotesCategoryModel.swift in Sources */,
+				C248BE962888F2A900FAD94C /* NotesCategoryView.swift in Sources */,
 				C248BEAF288A40AC00FAD94C /* OnboardingModel.swift in Sources */,
 				C248BEAD288A3D2D00FAD94C /* OnboardingContainerView.swift in Sources */,
-				C248BECB288F9AC900FAD94C /* addFlazhCardView.swift in Sources */,
+				C248BECB288F9AC900FAD94C /* AddFlazhCardView.swift in Sources */,
 				C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */,
 				C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */,
 				C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */,

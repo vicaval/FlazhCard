@@ -20,19 +20,18 @@ struct FlazhCardNotesContainerView: View {
                 .frame(height: 80.0)
             
             VStack(alignment: .leading)  {
+                
                 Text(flazhcardName)
                     .font(.custom("Poppins-Bold", size: 18))
                     .multilineTextAlignment(.leading)
-                
+                    .lineLimit(1)
                 
                 Text(flazhcardDescription)
                     .font(.custom("Poppins-Regular", size: 16))
+                    .lineLimit(1)
             }
-            .padding(.leading, 20.0)
-            
-            
+            .padding(.horizontal, 20.0)
         }
-        
     }
 }
 

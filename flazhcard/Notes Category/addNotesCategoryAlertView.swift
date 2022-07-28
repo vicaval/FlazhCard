@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct addNotesCategoryAlertView: View {
+struct AddNotesCategoryAlertView: View {
     
     let screenSize = UIScreen.main.bounds
     
