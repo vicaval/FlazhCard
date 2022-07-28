@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddFlazhCardView: View {
     
+    var category: Category
+    
     @Environment(\.presentationMode) var presentationMode
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -20,8 +22,9 @@ struct AddFlazhCardView: View {
     @State private var title: String = ""
     @State private var description: String = ""
     
-    init() {
+    init(category: Category) {
         UITextView.appearance().backgroundColor = .clear
+        self.category = category
     }
     
     var body: some View {
@@ -72,7 +75,8 @@ struct AddFlazhCardView: View {
                 Spacer()
                 
                 Button {
-                    
+                    addFlazhCard()
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
@@ -114,6 +118,7 @@ struct AddFlazhCardView: View {
             card.cardId = UUID()
             card.cardTitle = title
             card.cardDesc = description
+            card.category = category
             
             saveContext()
         }
@@ -127,11 +132,5 @@ struct AddFlazhCardView: View {
             let error = error as NSError
             fatalError("An error occured: \(error)")
         }
-    }
-}
-
-struct SecondView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFlazhCardView()
     }
 }

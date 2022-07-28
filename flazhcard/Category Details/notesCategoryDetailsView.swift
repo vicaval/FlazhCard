@@ -14,11 +14,16 @@ struct NotesCategoryDetailsView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(entity: Card.entity(), sortDescriptors: [])
-    private var products: FetchedResults<Card>
+//    @FetchRequest(entity: Card.entity(), sortDescriptors: [])
+//    private var products: FetchedResults<Card>
     
-    var flazhCardTitle: String
-    var flazcCardDesc: String
+    var category: Category
+    var cards: [Card]
+    
+    init(category: Category) {
+        self.category = category
+        self.cards = (category.cards)?.allObjects as! [Card]
+    }
     
     var body: some View {
         
@@ -47,15 +52,32 @@ struct NotesCategoryDetailsView: View {
                             .foregroundColor(Color.red)
                     }
                     .sheet(isPresented: $showView) {
-                        AddFlazhCardView()
+                        AddFlazhCardView(category: category)
                     }
                 }
                 .padding(.horizontal)
                 .padding(.top, 95)
                 
                 ScrollView {
-                    
-                    FlazhCardNotesContainerView(flazhcardName: flazhCardTitle, flazhcardDescription: "Lorem ipsum dolor sit amet")
+                    if cards.count > 0 {
+                        ForEach(cards, id: \.id) { card in
+                            NavigationLink {
+                                FlazhCardNotesContainerView(flazhcardName: card.cardTitle ?? "", flazhcardDescription: card.cardDesc ?? "")
+                            } label: {
+                                FlazhCardNotesContainerView(flazhcardName: card.cardTitle ?? "", flazhcardDescription: card.cardDesc ?? "")
+                            }
+                            .foregroundColor(.black)
+                            .buttonStyle(.borderless)
+                        }
+                        // .onDelete(perform: deleteProducts(offsets:))
+                    } else {
+                        Text("Let's start by adding\nnote's card")
+                            .font(.custom("Poppins-Bold", size: 20))
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.main.bounds.width - 40)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 200)
+                    }
                 }
                 .padding(.horizontal)
                 .padding(.top, 75)

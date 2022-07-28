@@ -25,7 +25,7 @@ struct CardCategoryContainerView: View {
                     .multilineTextAlignment(.leading)
                 
                 
-                Text("\(flazhcardCount) FlazhCards")
+                Text("\(flazhcardCount) FlazhCard(s)")
                     .font(.custom("Poppins-Regular", size: 16))
             }
             .padding(.leading, 20.0)

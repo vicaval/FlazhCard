@@ -59,15 +59,12 @@ struct NotesCategoryView: View {
                     .padding(.top, 89)
                     
                     ScrollView {
-                        
                         if categories.count > 0 {
-                            
                             ForEach(categories, id: \.id) { category in
-                                
                                 NavigationLink {
-                                    NotesCategoryDetailsView(flazhCardTitle: category.categoryId?.uuidString ?? "", flazcCardDesc: "")
+                                    NotesCategoryDetailsView(category: category)
                                 } label: {
-                                    CardCategoryContainerView(categoryName: category.categoryName ?? "", flazhcardCount: categories.count)
+                                    CardCategoryContainerView(categoryName: category.categoryName ?? "", flazhcardCount: category.cards?.count ?? 0)
                                 }
                                 .foregroundColor(.black)
                                 .buttonStyle(.borderless)
