@@ -54,12 +54,6 @@ struct FlazhCardView: View {
                             }
                             
                             Spacer()
-                            
-                            Button {
-                                print("Test123")
-                            } label: {
-                                Text("Finish")
-                            }
                         }
                         .font(.custom("Poppins-Regular", size: 15))
                         .padding(.horizontal, 20)

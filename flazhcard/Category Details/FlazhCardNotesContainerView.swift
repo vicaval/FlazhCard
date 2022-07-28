@@ -38,5 +38,6 @@ struct FlazhCardNotesContainerView: View {
 struct FlazhCardContainerView_Previews: PreviewProvider {
     static var previews: some View {
         FlazhCardNotesContainerView(flazhcardName: "The Use of Accessibility", flazhcardDescription: "Lorem Ipsum")
+            .previewLayout(.sizeThatFits)
     }
 }

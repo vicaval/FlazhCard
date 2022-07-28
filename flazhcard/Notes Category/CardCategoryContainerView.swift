@@ -37,5 +37,6 @@ struct CardCategoryContainerView: View {
 struct CardCategoryContainerView_Previews: PreviewProvider {
     static var previews: some View {
         CardCategoryContainerView(categoryName: "Design", flazhcardCount: 5)
+            .previewLayout(.sizeThatFits)
     }
 }
