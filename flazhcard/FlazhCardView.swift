@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct FlazhCardView: View {
+    
     @State var isFlipped = false
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode
+    
+    var category: Category
+    var cards: [Card]
+    
+    init(category: Category, categoryTitle: String) {
+        self.category = category
+        self.cards = (category.cards)?.allObjects as! [Card]
+    }
+    
     var body: some View {
         ZStack {
+            
             Image("FlazhCard_bg")
                 .resizable()
                 .ignoresSafeArea()
-            
             
             VStack {
                 
@@ -36,8 +49,8 @@ struct FlazhCardView: View {
                     
                     VStack {
                         
-                        Text("The Use of Accessibility")
-                            .font(.custom("Poppins-SemiBold", size: 20))
+                        Text(isFlipped ? cards[0].cardDesc ?? "" : cards[0].cardTitle ?? "")
+                            .font(isFlipped ? .custom("Poppins-Regular", size: 20) : .custom("Poppins-SemiBold", size: 20))
                             .multilineTextAlignment(.center)
                             .padding(.all, 50.0)
                         
@@ -48,7 +61,7 @@ struct FlazhCardView: View {
                     VStack {
                         HStack {
                             Button {
-                                print("Test123")
+                                presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Text("Exit")
                             }
@@ -75,7 +88,7 @@ struct FlazhCardView: View {
                     .padding(.trailing, 15)
                     
                     
-                    Text("2 of 3")
+                    Text("2 of \(cards.count)")
                         .frame(width: 115)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
@@ -91,11 +104,5 @@ struct FlazhCardView: View {
                 .padding(.bottom, 120)
             }
         }
-    }
-}
-
-struct FlazhCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        FlazhCardView()
     }
 }

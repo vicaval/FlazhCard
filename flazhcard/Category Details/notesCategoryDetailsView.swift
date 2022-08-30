@@ -14,15 +14,14 @@ struct NotesCategoryDetailsView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-//    @FetchRequest(entity: Card.entity(), sortDescriptors: [])
-//    private var products: FetchedResults<Card>
-    
     var category: Category
     var cards: [Card]
+    var categoryTitle: String
     
-    init(category: Category) {
+    init(category: Category, categoryTitle: String) {
         self.category = category
         self.cards = (category.cards)?.allObjects as! [Card]
+        self.categoryTitle = categoryTitle
     }
     
     var body: some View {
@@ -37,7 +36,7 @@ struct NotesCategoryDetailsView: View {
             VStack(alignment: .leading, spacing: 0) {
                 
                 HStack {
-                    Text("Your Notes")
+                    Text(categoryTitle)
                         .font(.custom("Poppins-Bold", size: 35))
                         .foregroundColor(Color.black)
                         .multilineTextAlignment(.leading)
@@ -69,7 +68,6 @@ struct NotesCategoryDetailsView: View {
                             .foregroundColor(.black)
                             .buttonStyle(.borderless)
                         }
-                        // .onDelete(perform: deleteProducts(offsets:))
                     } else {
                         Text("Let's start by adding\nnote's card")
                             .font(.custom("Poppins-Bold", size: 20))
@@ -83,13 +81,16 @@ struct NotesCategoryDetailsView: View {
                 .padding(.top, 75)
             }
             
-            StartButton()
+            StartButton(category: category)
         }
         .ignoresSafeArea()
     }
 }
 
 struct StartButton: View {
+    
+    var category: Category
+    
     var body: some View {
         ZStack(alignment: .top) {
             Rectangle()
@@ -97,8 +98,8 @@ struct StartButton: View {
                 .cornerRadius(20)
                 .frame(maxHeight: 100)
             
-            Button {
-                print("Testing")
+            NavigationLink {
+                FlazhCardView(category: category, categoryTitle: "").navigationBarHidden(true)
             } label: {
                 Image("Start_Button")
             }

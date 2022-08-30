@@ -13,7 +13,7 @@ struct flazhcardApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NotesCategoryView()
+            OnboardingContainerView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

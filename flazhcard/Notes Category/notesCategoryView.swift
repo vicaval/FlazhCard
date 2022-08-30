@@ -29,74 +29,71 @@ struct NotesCategoryView: View {
     
     var body: some View {
         
-        NavigationView {
+        ZStack {
+            Image("HomeBackground")
+                .resizable()
+                .ignoresSafeArea()
+                .aspectRatio(contentMode: .fill)
             
-            ZStack {
-                Image("HomeBackground")
-                    .resizable()
-                    .ignoresSafeArea()
-                    .aspectRatio(contentMode: .fill)
-                
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        Text("Your Notes")
-                            .font(.custom("Poppins-Bold", size: 35))
-                            .foregroundColor(Color.black)
-                            .multilineTextAlignment(.leading)
-                        
-                        Spacer()
-                        
-                        Button {
-                            self.isPresented = true
-                            hasContent.toggle()
-                        } label: {
-                            Text("+")
-                                .font(.custom("Poppins-Medium", size: 40))
-                                .foregroundColor(Color.red)
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.top, 89)
+            VStack(alignment: .leading, spacing: 0) {
+                HStack {
+                    Text("Your Notes")
+                        .font(.custom("Poppins-Bold", size: 35))
+                        .foregroundColor(Color.black)
+                        .multilineTextAlignment(.leading)
                     
-                    ScrollView {
-                        if categories.count > 0 {
-                            ForEach(categories, id: \.id) { category in
-                                NavigationLink {
-                                    NotesCategoryDetailsView(category: category)
-                                } label: {
-                                    CardCategoryContainerView(categoryName: category.categoryName ?? "", flazhcardCount: category.cards?.count ?? 0)
-                                }
-                                .foregroundColor(.black)
-                                .buttonStyle(.borderless)
-                            }
-                            .onDelete(perform: deleteProducts(offsets:))
-                        } else {
-                            Text("Let's start by adding\nnote's category")
-                                .font(.custom("Poppins-Bold", size: 20))
-                                .foregroundColor(.white)
-                                .frame(width: UIScreen.main.bounds.width - 40)
-                                .multilineTextAlignment(.center)
-                                .padding(.top, 200)
-                        }
+                    Spacer()
+                    
+                    Button {
+                        self.isPresented = true
+                        hasContent.toggle()
+                    } label: {
+                        Text("+")
+                            .font(.custom("Poppins-Medium", size: 40))
+                            .foregroundColor(Color.red)
                     }
-                    .padding(.horizontal)
-                    .padding(.top, 75)
-                    .background(Color.clear)
                 }
+                .padding(.horizontal)
+                .padding(.top, 89)
+                
+                ScrollView {
+                    if categories.count > 0 {
+                        ForEach(categories, id: \.id) { category in
+                            NavigationLink {
+                                NotesCategoryDetailsView(category: category, categoryTitle: category.categoryName ?? "COK")
+                            } label: {
+                                CardCategoryContainerView(categoryName: category.categoryName ?? "", flazhcardCount: category.cards?.count ?? 0)
+                            }
+                            .foregroundColor(.black)
+                            .buttonStyle(.borderless)
+                        }
+                        .onDelete(perform: deleteProducts(offsets:))
+                    } else {
+                        Text("Let's start by adding\nnote's category")
+                            .font(.custom("Poppins-Bold", size: 20))
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.main.bounds.width - 40)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 200)
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top, 75)
+                .background(Color.clear)
             }
-            .navigationBarHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
-            .overlay(
-                ZStack{
-                    Rectangle()
-                        .ignoresSafeArea()
-                        .opacity(isPresented ? 0.3 : 0)
-                        .foregroundColor(.black)
-                    AddNotesCategoryAlertView(isShown: $isPresented, text: $text)
-                }
-                    .animation(.easeIn)
-            )
         }
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .overlay(
+            ZStack{
+                Rectangle()
+                    .ignoresSafeArea()
+                    .opacity(isPresented ? 0.3 : 0)
+                    .foregroundColor(.black)
+                AddNotesCategoryAlertView(isShown: $isPresented, text: $text)
+            }
+                .animation(.easeIn)
+        )
     }
     
     private func deleteProducts(offsets: IndexSet) {
