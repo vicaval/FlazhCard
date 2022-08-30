@@ -10,6 +10,7 @@ import SwiftUI
 struct FlazhCardView: View {
     
     @State var isFlipped = false
+    @State var notesCount = 0
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
@@ -49,7 +50,7 @@ struct FlazhCardView: View {
                     
                     VStack {
                         
-                        Text(isFlipped ? cards[0].cardDesc ?? "" : cards[0].cardTitle ?? "")
+                        Text(isFlipped ? cards[notesCount].cardDesc ?? "" : cards[notesCount].cardTitle ?? "")
                             .font(isFlipped ? .custom("Poppins-Regular", size: 20) : .custom("Poppins-SemiBold", size: 20))
                             .multilineTextAlignment(.center)
                             .padding(.all, 50.0)
@@ -81,25 +82,35 @@ struct FlazhCardView: View {
                 
                 HStack {
                     Button {
-                        print("Testing")
+                        if notesCount >= 1 {
+                            notesCount -= 1
+                        }
+                        
+                        isFlipped = false
                     } label: {
-                        Image("left_disabled")
+                        Image("right_enabled")
+                            .rotationEffect(Angle(degrees: 180))
+                            .opacity(notesCount == 0 ? 0.5 : 1)
                     }
                     .padding(.trailing, 15)
                     
                     
-                    Text("2 of \(cards.count)")
+                    Text("\(notesCount + 1) of \(cards.count)")
                         .frame(width: 115)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                     
                     Button {
-                        print("Testing")
+                        if notesCount < cards.count - 1 {
+                            notesCount += 1
+                        }
+                        
+                        isFlipped = false
                     } label: {
                         Image("right_enabled")
+                            .opacity(notesCount == (cards.count - 1) ? 0.5 : 1)
                     }
                     .padding(.leading, 15)
-                    
                 }
                 .padding(.bottom, 120)
             }

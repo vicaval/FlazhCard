@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C23D8DE928BDCDB00060B2A3 /* EditFlazhCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23D8DE828BDCDB00060B2A3 /* EditFlazhCardView.swift */; };
 		C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE932888F2A900FAD94C /* flazhcardApp.swift */; };
 		C248BE962888F2A900FAD94C /* NotesCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248BE952888F2A900FAD94C /* NotesCategoryView.swift */; };
 		C248BE982888F2AB00FAD94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C248BE972888F2AB00FAD94C /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C23D8DE828BDCDB00060B2A3 /* EditFlazhCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlazhCardView.swift; sourceTree = "<group>"; };
 		C248BE902888F2A900FAD94C /* flazhcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flazhcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C248BE932888F2A900FAD94C /* flazhcardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flazhcardApp.swift; sourceTree = "<group>"; };
 		C248BE952888F2A900FAD94C /* NotesCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCategoryView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				C248BEC8288F8F3A00FAD94C /* NotesCategoryDetailsView.swift */,
 				C281BE362890F02200153D21 /* FlazhCardNotesContainerView.swift */,
 				C248BECA288F9AC900FAD94C /* AddFlazhCardView.swift */,
+				C23D8DE828BDCDB00060B2A3 /* EditFlazhCardView.swift */,
 			);
 			path = "Category Details";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				C248BEAD288A3D2D00FAD94C /* OnboardingContainerView.swift in Sources */,
 				C248BECB288F9AC900FAD94C /* AddFlazhCardView.swift in Sources */,
 				C281BE2F2890E45D00153D21 /* CardCategoryContainerView.swift in Sources */,
+				C23D8DE928BDCDB00060B2A3 /* EditFlazhCardView.swift in Sources */,
 				C248BEB3288CF58900FAD94C /* FlazhCardView.swift in Sources */,
 				C248BE942888F2A900FAD94C /* flazhcardApp.swift in Sources */,
 				C248BEAB2889A56000FAD94C /* OnboardingContentView.swift in Sources */,

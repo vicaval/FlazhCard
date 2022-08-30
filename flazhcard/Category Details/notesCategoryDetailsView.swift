@@ -10,7 +10,8 @@ import SwiftUI
 
 struct NotesCategoryDetailsView: View {
     
-    @State var showView = false
+    @State var showAdd = false
+    @State var showEdit = false
     
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -44,13 +45,13 @@ struct NotesCategoryDetailsView: View {
                     Spacer()
                     
                     Button {
-                        showView.toggle()
+                        showAdd.toggle()
                     } label: {
                         Text("+")
                             .font(.custom("Poppins-Medium", size: 40))
                             .foregroundColor(Color.red)
                     }
-                    .sheet(isPresented: $showView) {
+                    .sheet(isPresented: $showAdd) {
                         AddFlazhCardView(category: category)
                     }
                 }
@@ -60,13 +61,18 @@ struct NotesCategoryDetailsView: View {
                 ScrollView {
                     if cards.count > 0 {
                         ForEach(cards, id: \.id) { card in
-                            NavigationLink {
-                                FlazhCardNotesContainerView(flazhcardName: card.cardTitle ?? "", flazhcardDescription: card.cardDesc ?? "")
+                            Button {
+                                showEdit.toggle()
                             } label: {
                                 FlazhCardNotesContainerView(flazhcardName: card.cardTitle ?? "", flazhcardDescription: card.cardDesc ?? "")
+                                    .foregroundColor(.black)
                             }
-                            .foregroundColor(.black)
-                            .buttonStyle(.borderless)
+                            .sheet(isPresented: $showEdit) {
+                                EditFlazhCardView(
+                                    category: category,
+                                    cardName: card.cardTitle ?? "",
+                                    cardDesc: card.cardDesc ?? "")
+                            }
                         }
                     } else {
                         Text("Let's start by adding\nnote's card")
